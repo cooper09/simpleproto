@@ -30,7 +30,6 @@
           embed,
           object {
             max-width: 100%;
-            float: right;
           }
 
           ul li {
@@ -49,11 +48,9 @@
             margin:0px auto;
             background:#fff;
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-
+            margin-top: 3em;
           }
-          .vid-container {
-            background: pink;
-          }
+        
           .vendor {
             padding: 2%;
             background: #ccc;
@@ -73,9 +70,9 @@
           }
 
           .playlist {
-            background: blue;
             width: 100%;
-            margin-top: 350px;
+            margin-top: 11em;
+            background: red;
           }
 
           .feature {
@@ -85,6 +82,7 @@
               float: left;
               margin: 1em;
               padding: 1em;
+
             }
 
           #gray-line {
@@ -106,6 +104,7 @@
 
             .playlist {
              background: #fff;
+             margin-top: 2em;
             }
 
             .feature {
@@ -141,7 +140,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="">Intro</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="apply.html">Apply</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -157,18 +156,17 @@
              <div class="vendor">
                 <a href="intro.html"><img src="images/hero.jpg"></a>
               </div><!-- end class vendor -->
-              
+              <center>click on image to apply</center>
       </div><!-- vid-container -->
 
      <div class="playlist">
         <ul class="">
-            <li class="active"><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#about"><div class="feature">Other Feature</div></a></li>
-
-            <li><a href="#contact"><div class="feature">Other Feature</div></a></li>
             <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#about"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#contact"><div class="feature">Other Feature</div></a></li>
+            <li><a href="#"><div class="feature">Other Feature</div></a></li>
+            <li><a href="#"><div class="feature">Other Feature</div></a></li>
+            <li><a href="#"><div class="feature">Other Feature</div></a></li>
+            <li><a href="#"><div class="feature">Other Feature</div></a></li>
+            <li><a href="#"><div class="feature">Other Feature</div></a></li>
           </ul>
       </div>
      </div><!-- /.container -->
@@ -179,34 +177,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fitvids.js"></script>
-      <script>
-        // Basic FitVids Test
-        $(".vid-container").fitVids();
-        // Custom selector and No-Double-Wrapping Prevention Test
-        $(".vid-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
-      </script>
-
-      <script type="text/javascript" src="//js.maxmind.com/js/apis/geoip2/v2.0/geoip2.js"></script>
-
-      <script type="text/javascript">
-
-      var onSuccess = function(location){
-          console.log(
-              "Lookup successful:\n\n"
-              + JSON.stringify(location, undefined, 4)
-          );
-      };
-
-      var onError = function(error){
-          alert(
-              "Error:\n\n"
-              + JSON.stringify(error, undefined, 4)
-          );
-      };
-
-      geoip2.city(onSuccess, onError);
-
-      </script>
+   
   </body>
 </html>
