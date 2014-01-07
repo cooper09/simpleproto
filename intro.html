@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.png">
 
-    <title>Starter Template for WWE Prototype</title>
+    <title>Intro Page for WWE Prototype</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -22,7 +22,7 @@
           }
 
           video {
-            max-width: 50%;
+            max-width:100%;
             height: auto;
           }
 
@@ -30,7 +30,7 @@
           embed,
           object {
             max-width: 100%;
-            float: right;
+           /* float: right; */
           }
 
           ul li {
@@ -59,12 +59,8 @@
             background: #ccc;
             margin-top: 1em;
             margin-bottom: 2em;
-            width: 50%;
-            float: right;
-          }
-
-          .vendor img {
             width: 100%;
+            float: right;
           }
 
           .left-text {
@@ -75,7 +71,7 @@
           .playlist {
             background: blue;
             width: 100%;
-            margin-top: 350px;
+            margin-top: 450px;
           }
 
           .feature {
@@ -91,6 +87,10 @@
             border-bottom: 1px solid #e4e4e4;
             margin: 0px 24px;
             height:5px;
+          }
+
+          .welcome {
+            color: red;
           }
 
           /* Smartphones (portrait and landscape) ----------- */
@@ -139,38 +139,21 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="">Intro</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="intro.html">Intro</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
 
     <div class="container">
-    
+      Welcome <span class="welcome"></span>
       <div class="vid-container">
-              <div class="left-text">
-                <h2>Apply to be a WWE General Manager</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-              </div><!-- end left text --> 
-        
              <div class="vendor">
-                <a href="intro.html"><img src="images/hero.jpg"></a>
+                <iframe width="225" height="149" src="http://www.youtube.com/embed/FKWwdQu6_ok" frameborder="0" allowfullscreen></iframe>
               </div><!-- end class vendor -->
               
       </div><!-- vid-container -->
-
-     <div class="playlist">
-        <ul class="">
-            <li class="active"><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#about"><div class="feature">Other Feature</div></a></li>
-
-            <li><a href="#contact"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#about"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#contact"><div class="feature">Other Feature</div></a></li>
-          </ul>
-      </div>
      </div><!-- /.container -->
 
     
@@ -191,11 +174,20 @@
 
       <script type="text/javascript">
 
+      var location;
+      var country;
+
       var onSuccess = function(location){
           console.log(
               "Lookup successful:\n\n"
               + JSON.stringify(location, undefined, 4)
           );
+
+       //   location = JSON.stringify(location, undefined, 4);
+
+          alert("location info: " + location.city.names.de );
+
+          $('.welcome').html(location.city.names.de);
       };
 
       var onError = function(error){
