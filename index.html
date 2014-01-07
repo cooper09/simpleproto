@@ -180,24 +180,24 @@
 
       <script type="text/javascript" src="//js.maxmind.com/js/apis/geoip2/v2.0/geoip2.js"></script>
 
-<script type="text/javascript">
+      <script type="text/javascript">
 
-var onSuccess = function(location){
-    console.log(
-        "Lookup successful:\n\n"
-        + JSON.stringify(location, undefined, 4)
-    );
-};
+      var onSuccess = function(location){
+          console.log(
+              "Lookup successful:\n\n"
+              + JSON.stringify(location, undefined, 4)
+          );
+      };
 
-var onError = function(error){
-    alert(
-        "Error:\n\n"
-        + JSON.stringify(error, undefined, 4)
-    );
-};
+      var onError = function(error){
+          alert(
+              "Error:\n\n"
+              + JSON.stringify(error, undefined, 4)
+          );
+      };
 
-geoip2.city(onSuccess, onError);
+      geoip2.city(onSuccess, onError);
 
-</script>
+      </script>
   </body>
 </html>
