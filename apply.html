@@ -234,7 +234,7 @@
     <div class="container">
       <iframe width="100%" height="400" src="http://im360.immersivemedia.com/watch/embed/?s=2132&userWait=true" frameborder="0" allowfullscreen></iframe>
 
-      <form action="#">
+      <form action="final.html">
           <h2>Apply to be a WWE General Manager</h2>
           <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
         
@@ -354,7 +354,11 @@
         // Custom selector and No-Double-Wrapping Prevention Test
         $(".vid-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
       </script>
-
+      <script type="text/javascript">
+          function loadUrl(location) {
+            this.document.location.href = location;
+          }
+      </script>
      
   </body>
 </html>

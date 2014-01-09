@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>Intro Page for WWE Prototype</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+     <style>
+          body {
+            padding-top: 50px;
+            background: #ddd;
+          }
+
+          video {
+            max-width:100%;
+            height: auto;
+          }
+
+          iframe,
+          embed,
+          object {
+            max-width: 100%;
+           /* float: right; */
+          }
+
+          ul li {
+            float: left;
+            background: #ccc;
+            text-decoration: none;
+            list-style: none;
+          }
+
+          table {
+            margin-left: 3em;
+          }
+          .container {
+            width: 90%;
+            padding: 5%;
+            margin:0px auto;
+            background:#fff;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            margin-top: 3em;
+          }
+          .vid-container {
+          }
+          .vendor {
+            padding: 2%;
+            background: #ccc;
+            margin-top: 1em;
+            margin-bottom: 2em;
+            width: 100%;
+            float: right;
+          }
+
+          .left-text {
+            float: left;
+            width: 50%;
+          }
+
+          .feature {
+              background: #fff;
+              width:150px;
+              height: 50px;
+              float: left;
+              margin: 1em;
+              padding: 1em;
+            }
+
+          #gray-line {
+            border-bottom: 1px solid #e4e4e4;
+            margin: 0px 24px;
+            height:5px;
+          }
+
+          .welcome {
+            color: blue;
+          }
+
+          .icons {
+            float: right;
+          }
+
+          .social {
+          /*  float: right; */
+          }
+          /* Smartphones (portrait and landscape) ----------- */
+          @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+          /* Styles */
+            .vendor {
+              width: 100%;
+            }
+
+            .left-text {
+              width: 100%;
+            }
+
+            .playlist {
+             background: #fff;
+            }
+
+            .feature {
+              width: 100%;
+            }
+
+          }/* end media query */
+        </style>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.wwe.com/worldwide"><img src="images/logo.png" width="45" height="40"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="intro.html">Intro</a></li>
+            <li><a href="apply.html">Apply</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    <div class="container">
+      <div class="vendor">
+          <p>Your Custom Video</p>
+          <iframe width="425" height="349" src="http://www.youtube.com/embed/FKWwdQu6_ok" frameborder="0" allowfullscreen></iframe>
+        </div>
+     </div><!-- /.container -->
+
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+      <script>
+        // Basic FitVids Test
+        $(".vid-container").fitVids();
+        // Custom selector and No-Double-Wrapping Prevention Test
+        $(".vid-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
+      </script>
+
+      <script type="text/javascript" src="//js.maxmind.com/js/apis/geoip2/v2.0/geoip2.js"></script>
+
+      <script type="text/javascript">
+
+      var location;
+      var country;
+
+      var onSuccess = function(location){
+          console.log(
+              "Lookup successful:\n\n"
+              + JSON.stringify(location, undefined, 4)
+          );
+
+       //   location = JSON.stringify(location, undefined, 4);
+
+          console.log("location info: " + location.city.names.de );
+
+          $('.welcome').html(location.city.names.de);
+      };
+
+      var onError = function(error){
+            console.log(
+              "Error:\n\n"
+              + JSON.stringify(error, undefined, 4)
+          );
+      };
+
+      geoip2.city(onSuccess, onError);
+
+      </script>
+      <script type="text/javascript">
+          function loadUrl(location) {
+            this.document.location.href = location;
+          }
+</script>
+  </body>
+</html>
