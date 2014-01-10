@@ -90,8 +90,7 @@
             float: right;
           }
 
-          .social {
-          /*  float: right; */
+          .social 
           }
           /* Smartphones (portrait and landscape) ----------- */
           @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -154,12 +153,16 @@
           <p>Your Custom Video</p>
           <iframe width="425" height="349" src="http://www.youtube.com/embed/FKWwdQu6_ok" frameborder="0" allowfullscreen></iframe>
         </div>
+         <span class="icons">
+          <div class="social">Share your video.</div>
+          <span><a href="#"><img src="images/facebook.png"></a></span> <span><a href="#"><img src="images/twitter.png"></a></span>
+        </span><!--end icons -->
      </div><!-- /.container -->
      <!-- display regional info -->
       <div id="demo"></div>
       <div >
       </div><br><br>
-     
+    
       <div id="messageBox" 
         style="position:fixed;top:30%;left:30%;
         width:200px;height:100px;border-radius:15px;text-align:center;
@@ -187,43 +190,14 @@
         // Custom selector and No-Double-Wrapping Prevention Test
         $(".vid-container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
       </script>
-
-      <script type="text/javascript" src="//js.maxmind.com/js/apis/geoip2/v2.0/geoip2.js"></script>
-
-      <script type="text/javascript">
-
-      var location;
-      var country;
-
-      var onSuccess = function(location){
-          console.log(
-              "Lookup successful:\n\n"
-              + JSON.stringify(location, undefined, 4)
-          );
-
-       //   location = JSON.stringify(location, undefined, 4);
-
-          console.log("location info: " + location.city.names.de );
-
-          $('.welcome').html(location.city.names.de);
-      };
-
-      var onError = function(error){
-            console.log(
-              "Error:\n\n"
-              + JSON.stringify(error, undefined, 4)
-          );
-      };
-
-      geoip2.city(onSuccess, onError);
-
-      </script>
+<!-- may need to replace javascript for page loads if IE or browser blocking becomes an issue -->
       <script type="text/javascript">
           function loadUrl(location) {
             this.document.location.href = location;
           }
       </script>
-       <!-- capture reginal info -->
+       
+<!-- CORS (Cross-Origin Resource Sharing)  -->
       <script>
         var latitude;
         var longitude;
