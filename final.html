@@ -147,13 +147,34 @@
       </div>
 
     <div class="container">
+       <div>
+        <label id="val"></label>
+      </div>
       <div class="vendor">
           <p>Your Custom Video</p>
           <iframe width="425" height="349" src="http://www.youtube.com/embed/FKWwdQu6_ok" frameborder="0" allowfullscreen></iframe>
         </div>
      </div><!-- /.container -->
-
-    
+     <!-- display regional info -->
+      <div id="demo"></div>
+      <div >
+      </div><br><br>
+     
+      <div id="messageBox" 
+        style="position:fixed;top:30%;left:30%;
+        width:200px;height:100px;border-radius:15px;text-align:center;
+      background-color:skyblue; display:none;
+      ">
+      <div style="position:absolute;margin-top:0px;left:2px;
+      height:20px;width:98%;border-radius:5px;overflow:hidden;
+      background-color:pink; 
+      "><label id="title" style="
+      color:blue;">Skin Advisor</label></div>
+      <div style="position:absolute;margin:2px;top:25px;height:80px;width:100%;">
+      <label id="message" style="
+      color:blue;font-family:Helvetica;"></label></div>
+      </div>
+   
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -201,6 +222,127 @@
           function loadUrl(location) {
             this.document.location.href = location;
           }
-</script>
+      </script>
+       <!-- capture reginal info -->
+      <script>
+        var latitude;
+        var longitude;
+
+        var x=document.getElementById("demo");
+        function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            }
+          else{x.innerHTML="Geolocation is not supported by this browser.";
+          }
+        }
+        function showPosition(position) {
+          x.innerHTML="Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude; 
+          }
+
+      $( document ).ready(function() {
+          var x=document.getElementById("demo");
+          
+          function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              }
+            else{x.innerHTML="Geolocation is not supported by this browser.";
+            }
+          }
+
+        function showPosition(position) {
+          x.innerHTML="Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude; 
+
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+
+            getLocationDetails()
+
+  // Convert lat and long into city/country 
+
+      var country,state,city,pinCode;
+      function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+
+        if ("withCredentials" in xhr) {
+          // XHR for Chrome/Firefox/Opera/Safari.
+          xhr.open(method, url, true);
+
+        } else if (typeof XDomainRequest != "undefined") {
+          // XDomainRequest for IE.
+          xhr = new XDomainRequest();
+          xhr.open(method, url);
+
+        } else {
+          // CORS not supported.
+          xhr = null;
+        }
+        return xhr;
+      }
+
+      function getLocationDetails()
+      {
+      hide();
+      latitude1=latitude;
+      longitude1=longitude;
+
+      var url="http://maps.googleapis.com/maps/api/geocode/json?latlng="+
+              latitude1+","+longitude1+"&sensor=true";
+          var xhr = createCORSRequest('POST', url);
+                 if (!xhr) {
+                   alert('CORS not supported');
+                 }
+               
+                 xhr.onload = function() {
+              
+                  var data =JSON.parse(xhr.responseText);
+                  
+                  if(data.results.length>0)
+                  {
+                  
+                  var locationDetails=data.results[0].formatted_address;
+                  var  value=locationDetails.split(",");
+                  
+                  count=value.length;
+                  
+                   country=value[count-1];
+                   state=value[count-2];
+                   city=value[count-3];
+                   pin=state.split(" ");
+                   pinCode=pin[pin.length-1];
+                   state=state.replace(pinCode,' ');         
+                   document.getElementById("val").innerHTML=country+
+                     " | "+state+" | "+city+"  | "+pinCode;
+                  }
+                  else
+                  {
+                   document.getElementById("messageBox").style.visibility="hidden";
+                   document.getElementById("message").innerHTML=
+                     "No location available for provided details.";
+                  }
+                  
+                 };
+
+                 xhr.onerror = function() {
+                     alert('Woops, there was an error making the request.');
+                     
+                 };
+                  xhr.send();
+                  
+                  }
+
+                  function hide()
+                  {
+                    document.getElementById("messageBox").style.visibility="hidden";
+                  }
+             }
+
+          getLocation();
+
+      });     
+    </script>
   </body>
 </html>
