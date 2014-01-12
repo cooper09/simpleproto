@@ -1,0 +1,30 @@
+WWE GM Campaign
+
+Details Settings OAuth tool @Anywhere domains Reset keys Delete
+
+WWE Become a General Manager campaign prototype
+http://sonyainc.net/WWE/proto/
+Organization
+
+Information about the organization or company associated with your application. This information is optional.
+
+Organization	None
+Organization website	None
+OAuth settings
+
+Your application's OAuth settings. Keep the "Consumer secret" a secret. This key should never be human-readable in your application.
+
+Access level	 Read-only 
+About the application permission model
+Consumer key	1D567CPO3XOrkoQEjIhCA
+Consumer secret	Bll6DacY98T24YGD6iG4yLmY4qF9DJ5sO4nvcgLitw
+Request token URL	https://api.twitter.com/oauth/request_token
+Authorize URL	https://api.twitter.com/oauth/authorize
+Access token URL	https://api.twitter.com/oauth/access_token
+Callback URL	http://sonyainc.net/WWE/proto/
+Sign in with Twitter	No
+Your access token
+
+It looks like you haven't authorized this application for your own Twitter account yet. For your convenience, we give you the opportunity to create your OAuth access token here, so you can start signing your requests right away. The access token generated will reflect your application's current permission level.
+
+

@@ -1,0 +1,28 @@
+/* sites/all/themes/wwe_theme/layouts/dark/dark.css */
+body.pl-dark{background-color:#0b0b0b}
+.layout-dark{width:100%}
+.layout-dark .layout-inner{
+	width:984px;
+	background:#0b0b0b;
+	padding:0 0 28px;
+	margin:0 auto}.layout-dark .layout-inner .pane{
+		float:left;
+		margin:0 7px 28px 7px}
+		@media screen and (min-width : 768px) and (max-width: 983px){
+			.layout-dark .layout-inner{width:100%}.layout-dark 
+			.layout-inner .grid-col-4{width:31%}.layout-dark .layout-inner 
+			.pane{margin:0 1% 28px 1%}
+			.front .layout-dark .layout-inner .pane{margin-bottom:25px}
+			.layout-dark .layout-inner .pane-block{height:269px}
+			.layout-dark .layout-inner .pane-shared_widget{width:47%}
+			.front .layout-dark .layout-inner .pane-wwe-ads-ad-300-250-primary .pane-image_tout{width:100%}
+			.front .layout-dark .layout-inner .pane-shared_widget{
+				margin:0 .7% 0 7px !important;width:31%}
+
+			.layout-dark .layout-inner .pane-shared_widget .pane{width:100%}
+			.pane-shared_widget .panel-node-layout{width:100%}.pane-shared_widget 
+				.layout-inner .grid-col-4{width:100%}
+				body .pane-wwe-ads-ad-300-250-primary{width:31%}}
+				@media screen and (max-width : 767px){.layout-dark .layout-inner{width:100%}.layout-dark 
+				.layout-inner .pane{margin-right:0;margin-left:0;float:none}
+				body .pane-wwe-ads-ad-300-250-primary{width:31%}}
