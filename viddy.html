@@ -3,6 +3,8 @@
     <head>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
         <title>WEE Fluid Width Video Prototype</title>
+        <link href="//vjs.zencdn.net/4.2/video-js.css" rel="stylesheet">
+        <script src="//vjs.zencdn.net/4.2/video.js"></script>
         <style>
         	body {
             background: #ddd;
@@ -51,15 +53,46 @@
         <div class="vendor">
         	<embed src="http://blip.tv/play/AYHCnikC" type="application/x-shockwave-flash" width="550" height="396" wmode="transparent" allowscriptaccess="always" allowfullscreen="true" ></embed>
         </div>
+        <div class="vendor">
+        <div class='span5'>   
+          <h3>Video</h3> 
+          <video id="video-playlist" controls preload="metadata" 
+              poster="http://upload.wikimedia.org/wikipedia/en/7/71/Finding_Nemo_Coverart.png" class=" video-js vjs-default-skin" >
+              <source src="http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8" type="application/vnd.apple.mpegurl" />
+              <source src='https://s3.amazonaws.com/onarbor-media/uploads/1/1/v1/Finding_Nemo_Teaser.m4v' type="video/mp4">
+              <source src='https://s3.amazonaws.com/onarbor-media/uploads/1/1/v1/Finding_Nemo_Teaser.ogv' type="video/ogv">
+              <source src="https://s3.amazonaws.com/onarbor-media/uploads/1/1/v1/Finding_Nemo_Teaser.webm" type="video/webm">    
+          </video>     
+          <div id="video-playlist-vjs-playlist" class='vjs-playlist' style='width:100%'>
+            <ul>
+              <li>
+                <a class='vjs-track currentTrack' href='#episode-0' data-index='0' data-src='https://s3.amazonaws.com/onarbor-media/uploads/1/1/v1/Finding_Nemo_Teaser'> Finding Nemo </a><!--//note in the data-src's above that there are no file extensions, e.g., .m4v-->
+              </li>
+               <li >
+                <a class='vjs-track' href='#episode-1' data-index='1' data-src='https://s3.amazonaws.com/onarbor-media/uploads/1/1/v1/Big_Buck_Bunny_Trailer'><!--//note in the data-src's above that there are no file extensions, e.g., .m4v-->
+                Big Buck Bunny</a>
+              </li>       
+            </ul>
+          </div>
+        </div><!--span5-->  
+      </div><!-- end video js video -->
       </div><!-- end container -->
 
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-      <script src="jquery.fitvids.js"></script>
+      <script src="js/jquery.fitvids.js"></script>
       <script>
         // Basic FitVids Test
         $(".container").fitVids();
         // Custom selector and No-Double-Wrapping Prevention Test
         $(".container").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
       </script>
+
+          <script src="js/scale.fix.js"></script>
+          <!--script src="http://vjs.zencdn.net/4.0/video.js"></script--><!--include this script versus the following 2 script tags to loaded the compiled production video.js build rather than the development build-->
+
+       <script>var projectRoot='https://rawgithub.com/tim-peterson/video.js/master/';</script>
+       <script src="js/source-loader.js"></script>
+       <script src='js/videojs.playlist.js'></script>
+       <script src='js/demo.js'></script> 
       </body>
   </html>
