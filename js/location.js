@@ -33,7 +33,7 @@
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
 
-            getLocationDetails()
+            getLocationDetails();
 
   // Convert lat and long into city/country 
 
