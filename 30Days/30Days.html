@@ -26,19 +26,30 @@
       }
      .counter {
       background: orange;
+      height: 20px;
+      float: left;
+      width: 40%;
      }
-      .enter {
+     .logo {
+      background: yellow;
+      height: 140px;
+      max-width: 768px;
+     }
+    .enter {
       background: magenta;
-    
+      height: 190px;
      }
      .ppv {
       background: aqua;
+      height: 100px;
      }   
      .login {
       background: pink;
+      height: 190px;
      }
      .timeline {
       background: gold;
+      height: 210px;
      }
      </style>
 
@@ -52,7 +63,7 @@
     <![endif]-->
   </head>
 
-  <body background="">
+  <body background="images/bg.jpg" width="100%">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -72,26 +83,38 @@
         </div><!--/.nav-collapse -->
       </div>
 
-    <div class="container-fluid">
-      <div class="counter .col-sm-3">OFFICIAL COUNTDOWN CLOCK</div>
-      <div class="enter .col-md-8">Enter to win</div>
-      <label id="val">Generic Label</label>
-      </div>
+    <div class="container">
+     <div class="row">
+      <div class="row">
+         <center><div class="counter .col-sm-3">OFFICIAL COUNTDOWN CLOCK</div>
+        <div class="logo .col-md-8">Logo goes here.</div></center>
+      </div><!-- end row -->
+      <div class="enter .col-md-8">
+          <h2>ENTER TO WIN BELOW</h2>
+          <p>sign in with facebook, twitter or WWE login to win.</p>
+      </div><!-- end enter -->
+
       <center>
-        <h2>ENTER TO WIN BELOW</h2>
-        <p>sign in with facebook, twitter or WWE login to win.</p>
+        
         <div class="login .col-md-8">Login Here</div>
         <div class="ppv .col-md-8">Pay-Per-View</div>
-
+        <div class="timeline .col-md-8">Timeline goes here..</div>
       </center>
-     
+      </div> <!-- end row -->
      </div><!-- /.container -->
      <!-- capture regional info -->
-      <div id="timeline .col-md-8">Timeline goes here..</div>
       <div >
 
       </div><br><br>
-      
+
+<!-- regional location info -->
+   <div id="demo"></div>
+      <div >
+
+      </div><br><br>
+      <div>
+      <label id="val"></label>
+      </div>
       
     <!-- Bootstrap core JavaScript
     ================================================== -->
