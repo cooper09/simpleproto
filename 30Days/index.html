@@ -14,12 +14,13 @@
 
     <!-- Normalize css first -->
     <link href="css/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/timer_styles.css" />
+  <!-- let's hold off on the timer styles until we actually need it... 
+    <link rel="stylesheet" href="css/timer_styles.css" /> -->
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/starter-template.css" rel="stylesheet">
+    <link href="css/starter-template.css" rel="stylesheet">
     <link href="30Days.css" rel="stylesheet">
      <style>
      * {
@@ -42,6 +43,7 @@
     .enter {
       background: #3f3563;
       height: 190px;
+      padding: 1em;
      }
      .w50text {
         float: left;
@@ -52,19 +54,211 @@
         margin: auto;
         margin-top: 3em;
      }
-     .ppv {
-      background: ;
-      height: 100px;
+    .ppv {
+      background: #3f3563;
+      height: 170px;
      }   
+
+    .ppv .left {
+      float: left;
+      width: 40%;
+     }
+
+    .ppv .right {
+      float:right;
+      width: 60%;
+     }
+    
+    .ppvtxt {
+      font-size: 1.4em;
+    }
+
+    .smalltxt {
+      font-size: 0.8em;
+    }
+
      .login {
-      background:;
       height: 190px;
+      color: #000;
+      width: 70%;
+     }
+     .login .left {
+      width: 50%;
+      float:left;
+      height: 50px;
+     }
+     .button {
+      color: black;
+     }
+     .login .right {
+      width: 50%;
+      float: right;
+      height: 50px;
      }
      .timeline {
       background: #000;
       height: 210px;
      }
+
+     input#fbForm , input#twitterForm, textarea#Field1, textarea#Field4, input#signupForm {
+      color: black;
+     }
+
+     .signup {
+      width: 100%;
+      background: aqua;
+     }
+     /* Smartphones (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+        h2 {
+         
+
+            }
+
+            .w50text {
+              width: 100%;
+              font-size: 1 em;
+            }
+
+            .w50img {
+              width:100%;
+              margin: auto;
+            }
+              .counter {
+                  width:100%;
+               }
+              .enter {
+                height: 300px;
+                 }
+
+              .login {
+                  height: 300px;
+
+              }
+              .ppv  {
+                  height: 220px;
+              }
+
+              .ppv .left {
+                display: none;
+              }
+
+              .ppv .right {
+                width: 100%;
+              }
+              .timeline  {
+               
+              }
+        }/* end media queries */
      </style>
+     <style>
+        /* responive application form */
+          * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+
+          form header {
+            margin: 0 0 20px 0; 
+          }
+          form header div {
+            font-size: 90%;
+            color: #999;
+          }
+          form header h2 {
+            margin: 0 0 5px 0;
+          }
+          form > div {
+            clear: both;
+            overflow: hidden;
+            padding: 1px;
+            margin: 0 0 10px 0;
+          }
+          form > div > fieldset > div > div {
+            margin: 0 0 5px 0;
+          }
+          form > div > label,
+          legend {
+            width: 25%;
+            float: left;
+            padding-right: 10px;
+          }
+          form > div > div,
+          form > div > fieldset > div {
+            width: 75%;
+            float: right;
+          }
+          form > div > fieldset label {
+            font-size: 90%;
+          }
+          fieldset {
+            border: 0;
+            padding: 0;
+          }
+
+          input[type=text],
+          input[type=email],
+          input[type=url],
+          input[type=password],
+          textarea {
+            width: 100%;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+          }
+          input[type=text],
+          input[type=email],
+          input[type=url],
+          input[type=password] {
+            width: 50%;
+          }
+          input[type=text]:focus,
+          input[type=email]:focus,
+          input[type=url]:focus,
+          input[type=password]:focus,
+          textarea:focus {
+            outline: 0;
+            border-color: #4697e4;
+          }
+
+          @media (max-width: 600px) {
+            form > div {
+              margin: 0 0 15px 0; 
+            }
+            form > div > label,
+            legend {
+              width: 100%;
+              float: none;
+              margin: 0 0 5px 0;
+            }
+            form > div > div,
+            form > div > fieldset > div {
+              width: 100%;
+              float: none;
+            }
+            input[type=text],
+            input[type=email],
+            input[type=url],
+            input[type=password],
+            textarea,
+            select {
+              width: 100%; 
+            }
+          }
+          @media (min-width: 1200px) {
+            form > div > label,
+            legend {
+              text-align: right;
+            }
+          }
+          /* Smartphones (portrait and landscape) ----------- */
+          @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+          /* Styles */
+          }/* end media query */
+        </style><!--end of responsive form css -->
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -126,21 +320,62 @@
           <img src="images/W50.png">
         </span><!-- end w50 image -->
       </div><!-- end enter -->
-       <center><h2>ENTER TO WIN BELOW</h2>
-          <p>sign in with facebook, twitter or WWE login to win.</p>
-        </center>
       <center>
         <div class="login .col-md-8">
-          <img src="images/login.png">
+        <form action="#">
+          <h2>ENTER TO WIN BELOW</h2>
+          <div>sign in with facebook, twitter or WWE login to win.</div>
+              <span class="left">
+                <div><!-- Fb login button -->
+                  <input id="fbForm" name="fbForm" type="submit" value="Login with facebook">
+                </div><!-- end Fb login button -->
+              
+              <div>
+                <input id="twitterForm" name="twitterForm" type="submit" value="Login with Twitter">
+              </div>
+              <div>
+                <!--   <input id="Field3" name="Field3" type="email" spellcheck="false" value="" maxlength="255" tabindex="3">  -->
+               </div>
+              </span><!-- end left -->
+                
+              <span class="right">
+                
+                <div>
+                  <textarea id="Field1" name="Field1" spellcheck="true" rows="1" cols="25" tabindex="3">What's your user name</textarea>
+                </div>
+             
+                          
+                <div>
+                  <textarea id="Field4" name="Field4" spellcheck="true" rows="1" cols="25" tabindex="4">What's your password</textarea>
+                </div>
+              </span> <!-- end right -->
+            </form><!-- end login form -->
+            <div>
+                <input id="signupForm" name="signupForm" type="submit" value="Sign me up!">
+              </div>
         </div><!-- end login -->
-        <div class="ppv .col-md-8">Pay-Per-View
-          <img src="images/ppv.png">
-        </div><!-- end pov -->
-        <div class="timeline .col-md-8">Timeline goes here..
-          <img src="images/timeline.png">
-        </div><!-- end timeline -->
-      </center>
-      </div> <!-- end row -->
+
+          <div class="ppv .col-md-8">
+              <!--   <img src="images/ppv.png">  -->
+              <span class="left">
+                <img src="images/logo2.png" width="100%">
+              </span><!-- end ppv leff -->
+              <span class="right">
+                <div class="ppvtxt">WRESTLEMANIA 30 LIVE ON PPV</div>
+                <p>MERCEDES BENZ SUPERDOME NEW ORLEANS, LA</P>
+                <P></P>
+                <P><B>WHEN:</B> SATURDAY FEBRUARY 1ST<P>
+                <P><B>TIME:</B> 8:00PM
+                <P></P>
+                <input id="orderForm" name="orderForm" type="submit" value="ORDER NOW">
+              </span><!-- end ppv right -->
+              </div><!-- end pov -->
+              <div class="timeline .col-md-8">
+                
+                <iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0Akoli93-iDrXdGZObHZCLWFSaVJpVnZzUkVTZDFNeUE&font=Bevan-PotanoSans&maptype=toner&lang=en&height=350' width='100%' height='350' frameborder='0'></iframe>
+              </div><!-- end timeline -->
+            </center>
+            </div> <!-- end row -->
      </div><!-- /.container -->
      <!-- capture regional info -->
       <div >
@@ -177,8 +412,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
    <!--  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/location.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/location.js"></script>
     <script>
   
     $(document).ready(function(){

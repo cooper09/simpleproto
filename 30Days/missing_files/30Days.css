@@ -1,0 +1,101 @@
+body {  
+     /*   background: url('images/template.jpg)') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-top: 12%;   */
+
+         padding-top: 50px;
+            width: 100%;
+            height: 100%;
+            background-position:center;
+          /*  background-image:url(images/template.jpg);  */
+          }
+
+          video {
+            max-width: 50%;
+            height: auto;
+          }
+
+          iframe,
+          embed,
+          object {
+            max-width: 100%;
+          }
+
+          ul li {
+            float: left;
+            background: #ccc;
+            text-decoration: none;
+            list-style: none;
+          }
+
+          table {
+            margin-left: 3em;
+          }
+          .container {
+            width: 80%;
+            max-width: 768px;
+            height: 768px;
+            padding: 5%;
+            margin:0px auto;
+            background:#000; 
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            margin-top: 3em;
+            color: #fff;
+
+          }
+        
+          .left-text {
+            float: left;
+            width: 50%;
+          }
+
+          .playlist {
+            width: 100%;
+            margin-top: 11em;
+            background: red;
+          }
+
+          .feature {
+              background: #fff;
+              width:150px;
+              height: 50px;
+              float: left;
+              margin: 1em;
+              padding: 1em;
+
+            }
+
+          #gray-line {
+            border-bottom: 1px solid #e4e4e4;
+            margin: 0px 24px;
+            height:5px;
+          }
+
+          #demo {
+            color: blue;
+          }
+
+          /* Smartphones (portrait and landscape) ----------- */
+          @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+          /* Styles */
+            .vendor {
+              width: 100%;
+            }
+
+            .left-text {
+              width: 100%;
+            }
+
+            .playlist {
+             background: #fff;
+             margin-top: 2em;
+            }
+
+            .feature {
+              width: 100%;
+            }
+
+          }/* end media query */
