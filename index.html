@@ -1,115 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="images/favicon.png">
 
-    <title>Starter Template for WWE Prototype</title>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" src="http://j.maxmind.com/app/geoip.js"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+<script>
+mmjsCountryCode = geoip_country_code();
+mmjsCountryName = geoip_country_name();
+mmjsCity = geoip_city();
+mmjsRegionName = geoip_region_name();
 
-    <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-     <style>
-          
-     </style>
+/*  other info available
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+function geoip_country_code() { return 'ID'; }
+function geoip_country_name() { return 'Indonesia'; }
+function geoip_city()         { return 'Jakarta'; }
+function geoip_region()       { return '04'; }
+function geoip_region_name()  { return 'Jakarta Raya'; }
+function geoip_latitude()     { return '-6.1744'; }
+function geoip_longitude()    { return '106.8294'; }
+function geoip_postal_code()  { return ''; }
+function geoip_area_code()    { return ''; }
+function geoip_metro_code()   { return ''; }
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
 
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://www.wwe.com/worldwide"><img src="images/logo.png" width="45" height="40"></a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="intro.html">Intro</a></li>
-            <li><a href="apply.html">Apply</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+*/
 
-    <div class="container">
-      <div id="demo"></div>
-      <div >
-          Data goes here...
-      </div><br><br>
-      <div>
-      <label id="val"></label>
-      </div>
-      <div class="vid-container">
-              <div class="left-text">
-                <h2>TEST - Apply to be a WWE General Manager</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-              </div><!-- end left text --> 
-        
-             <div class="vendor">
-                <a href="intro.html"><img src="images/intro_image.png"></a>
-              </div><!-- end class vendor -->
-              <center>click on image to apply</center>
-      </div><!-- vid-container -->
 
-     <div class="playlist">
-        <ul class="">
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-            <li><a href="#"><div class="feature">Other Feature</div></a></li>
-          </ul>
-      </div>
-     </div><!-- /.container -->
-     <!-- capture regional info -->
-      <div id="demo"></div>
-      <div >
+</script>
 
-      </div><br><br>
-      <div>
-      <label id="val"></label>
-      </div>
-      <div id="messageBox" 
-        style="position:fixed;top:30%;left:30%;
-        width:200px;height:100px;border-radius:15px;text-align:center;
-      background-color:skyblue; display:none;
-      ">
-      <div style="position:absolute;margin-top:0px;left:2px;
-      height:20px;width:98%;border-radius:5px;overflow:hidden;
-      background-color:pink; 
-      "><label id="title" style="
-      color:blue;">Skin Advisor</label></div>
-      <div style="position:absolute;margin:2px;top:25px;height:80px;width:100%;">
-      <label id="message" style="
-      color:blue;font-family:Helvetica;"></label></div>
-      </div>
+<script language="javascript">
+$(document).ready ( function () { 
+	$('#ad1').click ( function () {
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/location.js"></script>
+		alert("clicked by user in the following location - country code: " + mmjsCountryCode + " city: " + mmjsCity + " region: " + mmjsRegionName );
+	});
+});
+</script>
 
-  </body>
-</html>
+<style>
+	#ad1 {
+		margin: 1em;
+		cursor:pointer;
+	}
+</style>
+</head>
+	<pre id="polyad">Click to get user location info...
+		TEST
+		<div id="ad1"><img src="http://sonyainc.net/francesca/app/img/francesca_banner.jpg" /></div>
+	</pre>
+
+

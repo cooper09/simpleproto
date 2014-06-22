@@ -1,0 +1,397 @@
+<!doctype html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US" prefix="og: http://ogp.me/ns#" > <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US" prefix="og: http://ogp.me/ns#" > <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US" prefix="og: http://ogp.me/ns#" "> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#" ng-app="zico" > <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+
+	<title>PolyAds Admin</title>
+
+	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- Favicon and Feed -->
+	<link rel="shortcut icon" type="image/png" href="http://sonyainc.net/favicon.png">
+	<link rel="alternate" type="application/rss+xml" title="Sonya E &#8211; Front-end Engineering &amp; Wordpress theme developer Feed" href="http://sonyainc.n/feed/">
+
+	<!--  iPhone Web App Home Screen Icon -->
+	<link rel="apple-touch-icon" sizes="72x72" href="img/devices/reverie-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="http://zyadsherif.com/wp-content/themes/zyadsherif/img/devices/reverie-icon-retina.png" />
+	<link rel="apple-touch-icon" href="http://zyadsherif.com/wp-content/themes/zyadsherif/img/devices/reverie-icon.png" />
+
+	<!-- Enable Startup Image for iOS Home Screen Web App -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-startup-image" href="http://zyadsherif.com/wp-content/themes/zyadsherif/mobile-load.png" />
+
+	<!-- Startup Image iPad Landscape (748x1024) -->
+	<link rel="apple-touch-startup-image" href="http://zyadsherif.com/wp-content/themes/zyadsherif/img/devices/reverie-load-ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+	<!-- Startup Image iPad Portrait (768x1004) -->
+	<link rel="apple-touch-startup-image" href="http://zyadsherif.com/wp-content/themes/zyadsherif/img/devices/reverie-load-ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
+	<!-- Startup Image iPhone (320x460) -->
+	<link rel="apple-touch-startup-image" href="http://zyadsherif.com/wp-content/themes/zyadsherif/img/devices/reverie-load.png" media="screen and (max-device-width: 320px)" />
+
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.13 - http://yoast.com/wordpress/seo/ -->
+
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="TEST/" />
+<link rel="alternate" type="application/rss+xml" title="TEST" href="" />
+<link rel="alternate" type="application/rss+xml" title="TEST" href="" />
+<link rel='stylesheet' id='jetpack-widgets-css'  href='css/widgets.css' type='text/css' media='all' />
+<link rel='stylesheet' id='reverie-stylesheet-css'  href='css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='reverie-stylesheet-app-css'  href='css/app.css' type='text/css' media='' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='reverie-ie-only-css'  href='http://zyadsherif.com/wp-content/themes/zyadsherif/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='sharedaddy-css'  href='css/sharing.css' type='text/css' media='all' />
+<script type='text/javascript' src='js/jquery/jquery.js'></script>
+<script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='js/comment-reply.min.js'></script>
+<script type='text/javascript' src='js/custom.modernizr.js'></script>
+<link rel='shortlink' href='http://wp.me/P247JY-9' />
+<style type='text/css'>img#wpstats{display:none}</style>
+<style>
+	.add-padding {
+		padding: 2em;
+	}
+	.orange {
+		background: #e34f26;
+		color: #fff;
+	}
+	.light-blue {
+		background: #0ca7d3;
+		color: #fff;
+	}
+	.blue {
+		background: #0868ac;
+		color: #fff;
+	}
+	.hideme {
+		display:none;
+	}
+	.showme {
+		display: block;
+	}
+
+	.work {
+		cursor: pointer;
+	}
+	.personal {
+		cursor: pointer;
+	}
+	.groceries {
+		cursor: pointer;
+	}
+	.cover1 {
+		display: none;
+	}
+	.cover2 {
+		display: none;
+	}
+	.cover3 {
+		display: none;
+	}
+	.zap {
+		border: 1px solid #ccc;
+		background: red;
+	}
+	#addbtn {
+		margin-right: 1em;
+	}
+
+	.inputbox {
+		margin-left: 1em;
+	}
+	.deletethingy {
+		font-size: 1.2em;
+	}
+	a {
+	  font-size: 1.4em;
+	  margin-left: 1em;
+	}
+
+	#tooltip
+{
+    text-align: center;
+    color: #fff;
+    background: #111;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+}
+ 
+    #tooltip:after /* triangle decoration */
+    {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #111;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+    }
+ 
+        #tooltip.top:after
+        {
+            border-top-color: transparent;
+            border-bottom: 10px solid #111;
+            top: -20px;
+            bottom: auto;
+        }
+ 
+        #tooltip.left:after
+        {
+            left: 10px;
+            margin: 0;
+        }
+ 
+        #tooltip.right:after
+        {
+            right: 10px;
+            left: auto;
+            margin: 0;
+        }
+</style>
+<!-- tooltip plug-in -->
+<script>
+$( function()
+{
+    var targets = $( '[rel~=tooltip]' ),
+        target  = false,
+        tooltip = false,
+        title   = false;
+ 
+    targets.bind( 'mouseenter', function()
+    {
+        target  = $( this );
+        tip     = target.attr( 'title' );
+        tooltip = $( '<div id="tooltip"></div>' );
+ 
+        if( !tip || tip == '' )
+            return false;
+ 
+        target.removeAttr( 'title' );
+        tooltip.css( 'opacity', 0 )
+               .html( tip )
+               .appendTo( 'body' );
+ 
+        var init_tooltip = function()
+        {
+            if( $( window ).width() < tooltip.outerWidth() * 1.5 )
+                tooltip.css( 'max-width', $( window ).width() / 2 );
+            else
+                tooltip.css( 'max-width', 340 );
+ 
+            var pos_left = target.offset().left + ( target.outerWidth() / 2 ) - ( tooltip.outerWidth() / 2 ),
+                pos_top  = target.offset().top - tooltip.outerHeight() - 20;
+ 
+            if( pos_left < 0 )
+            {
+                pos_left = target.offset().left + target.outerWidth() / 2 - 20;
+                tooltip.addClass( 'left' );
+            }
+            else
+                tooltip.removeClass( 'left' );
+ 
+            if( pos_left + tooltip.outerWidth() > $( window ).width() )
+            {
+                pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
+                tooltip.addClass( 'right' );
+            }
+            else
+                tooltip.removeClass( 'right' );
+ 
+            if( pos_top < 0 )
+            {
+                var pos_top  = target.offset().top + target.outerHeight();
+                tooltip.addClass( 'top' );
+            }
+            else
+                tooltip.removeClass( 'top' );
+ 
+            tooltip.css( { left: pos_left, top: pos_top } )
+                   .animate( { top: '+=10', opacity: 1 }, 50 );
+        };
+ 
+        init_tooltip();
+        $( window ).resize( init_tooltip );
+ 
+        var remove_tooltip = function()
+        {
+            tooltip.animate( { top: '-=10', opacity: 0 }, 50, function()
+            {
+                $( this ).remove();
+            });
+ 
+            target.attr( 'title', tip );
+        };
+ 
+        target.bind( 'mouseleave', remove_tooltip );
+        tooltip.bind( 'click', remove_tooltip );
+    });
+});
+</script>
+
+</head>
+
+<body class="home page page-id-9 page-template page-template-frontpage-php loading" ng-controller="AppCtrl" >
+
+
+<div id="main-wrapper ">
+	<div class="loader"><i class="icomoon-spinner-2 icon-spin"></i></div>
+	<div class="main-header">
+		<a href="#home"><div id="logo">PolyAds Admin</div></a>
+		<a href="#" class="menu-toggle"><i class="icomoon-menu-3"></i></a>
+		<ul class="main-menu inline-list">
+			<li><a href="#work">Ad Clicks</a></li>
+			<li><a href="#personal">Impressions</a></li>
+		</ul>
+	</div>
+<div id="home" class="step">
+
+	</div>
+			<div class="row quote-wrapper">
+			<div class="quote large-8 columns large-centered small-10 small-centered">
+			
+				<h3 style="color: #fff;">A Picture Is Worth a Thousand Words</h3>
+			</div>
+		</div><!-- end quote wrapper -->
+</div>
+	<div id="work" class="step">
+		<div class="row">
+			<div class="large-3 small-12 columns blue work">
+				<h2 class="tab-title">Ad Clicks</h2>
+			</div>
+
+				<div class="columns large-9 small-12 add-padding" >
+				  <div ng-controller="DataCtrl" class="cover1">
+
+				        <p>Showwing last {{workTotal}} clicks: <p>
+
+				        <style>
+				        	li {
+				        		color: #0ca7d3;
+				        		text-decoration: none;
+				        		line-height: inherit;
+				        		font-size: 1.4em;
+				        		margin-right: 3em;
+				        		font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+				        		list-style: none;
+				        	}
+				        	.heading {
+				        		color: #666;
+				        		font-weight: bold;
+				        	}
+				        	.ng-binding {
+				        		margin-right: 1.2em;
+				        	}
+				        	#refreshbtn {
+				        		display: none;
+				        	}
+				        </style>
+
+				         <li ng-repeat="task in workData" ng-class="{strike: deleted}"> 
+				            <span class=""><span class="heading">ad:</span> {{task.campaign}}</span>
+				            <span class=""><span class="heading">publisher:</span> {{task.publisher}}</span>
+				            <span class=""><span class="heading">Time of Click:</span> {{task.clickdate}}</span>
+				            <p></P>
+				   </div><!-- end DataCtrl -->
+			<button id="refreshbtn" ng-click="getData()" ng-init="count=0" title="Click to Refresh Data!">Refresh</button>				
+		</div><!-- end row -->
+		 
+	</div><!-- end id work -->
+
+	<div id="personal" >
+		<div class="row">
+			<div class="large-3 small-12 columns orange personal">
+				<h2 class="tab-title">My Stuff</h2>
+			</div>
+			
+			<div class="columns large-9 small-12 add-padding" >
+				  <div ng-controller="DataCtrl"  class="cover2">
+
+				        <p>Total Personal Todos: {{myTotal}}<p>
+
+				         <li ng-repeat="task in myData" ng-class="{strike: deleted}">  
+				           <span>id: {{task.id}}</span><span><input type="checkbox" ng-model="deleted" class="inputbox"></span> <span class="deletethingy">delete</span> <span><a href="" ng-click="deleteData(task.id)">task: {{task.task}}</a></span>
+				        </li>
+				      <span><h3>New Task - Personal: </h3></span><input type="text" ng-model='newTask' class="input zap"><br/>
+				        <button id="addbtn" ng-click="putPersonalData(newTask)">Add</button><button id="refreshbtn" ng-click="getData()" ng-init="count=0">Refresh</button>
+				   </div><!-- end DataCtrl -->
+								
+			</div><!-- end columns -->
+		</div><!-- end row -->
+	</div><!-- end id personal -->
+		
+<div id="footer">
+		<div class="row">
+			<div class="large-8 large-centered small-12 columns">
+				<ul id="social-links" class="large-block-grid-5 small-block-grid-5">
+					<li class="facebook"><a href="" target="_blank"><i class="icomoon-facebook"></i></a></li>
+					<li class="twitter"><a href="" target="_blank"><i class="icomoon-twitter"></i></a></li>
+					<li class="linkedin"><a href="http://www.linkedin.com/profile/" target="_blank"><i class="icomoon-linkedin"></i></a></li>
+					<li class="google"><a href="" target="_blank"><i class="icomoon-google-plus"></i></a></li>
+					<li class="instagram"><a href="http://github.com/cooper09"><i class="icomoon-github-5" target="_blank"></i></a></li>
+				</ul>
+			<div class="columns large-4 small-12"><p>Built with <a href="http://foundation.zurb.com" target="_blank">Foundation</a> by <a href="http://zurb.com" target="_blank">Zurb</a></p></div>
+			<div class="columns large-4 small-12"><p>
+				<a href="http://www.w3.org/html/logo/" class="html5-logo">
+				<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-semantics.png" width="197" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics">
+				</p></a>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div style="display:none">
+	</div>
+<script type='text/javascript' src='js/wpgroho.js'></script>
+<script type='text/javascript' src='js/foundation.min.js'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js'></script>
+
+/* <![CDATA[ */
+var myAjax = {"ajaxurl":"http:\/\/zyadsherif.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='js/app.js'></script>
+
+	
+<script>
+	(function($) {
+		$(document).foundation();
+		
+		$( ".work" ).click(function() {
+		  $('.cover1').toggle('slow');
+		});
+		$( ".personal" ).click(function() {
+		  $('.cover2').toggle('slow');
+		});
+		$( ".groceries" ).click(function() {
+		  $('.cover3').toggle('slow');
+		});
+
+
+		$('[title').tooltip({
+				position: "top right",
+				effect: "fade",
+				width: '50px',
+				opacity: 0.8 
+			});
+
+	})(jQuery);
+
+	function JSON_CALLBACK () {
+		alert("Test");
+	}
+</script>	
+</body>
+</html>
