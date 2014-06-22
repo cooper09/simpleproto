@@ -1,0 +1,51 @@
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" src="http://j.maxmind.com/app/geoip.js"></script>
+
+<script>
+mmjsCountryCode = geoip_country_code();
+mmjsCountryName = geoip_country_name();
+mmjsCity = geoip_city();
+mmjsRegionName = geoip_region_name();
+
+/*  other info available
+
+function geoip_country_code() { return 'ID'; }
+function geoip_country_name() { return 'Indonesia'; }
+function geoip_city()         { return 'Jakarta'; }
+function geoip_region()       { return '04'; }
+function geoip_region_name()  { return 'Jakarta Raya'; }
+function geoip_latitude()     { return '-6.1744'; }
+function geoip_longitude()    { return '106.8294'; }
+function geoip_postal_code()  { return ''; }
+function geoip_area_code()    { return ''; }
+function geoip_metro_code()   { return ''; }
+
+
+*/
+
+
+</script>
+
+<script language="javascript">
+$(document).ready ( function () { 
+	$('#ad1').click ( function () {
+
+		alert("clicked by user in the following location - country code: " + mmjsCountryCode + " city: " + mmjsCity + " region: " + mmjsRegionName );
+	});
+});
+</script>
+
+<style>
+	#ad1 {
+		margin: 1em;
+		cursor:pointer;
+	}
+</style>
+</head>
+	<pre id="polyad">Click to get user location info...
+		TEST
+		<div id="ad1"><img src="http://sonyainc.net/francesca/app/img/francesca_banner.jpg" /></div>
+	</pre>
+
+
