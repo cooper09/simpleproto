@@ -20,6 +20,7 @@ class task
         echo "Doing task."; 
     }
 }
+
 $dbh=mysql_connect ("localhost", "sonyainc_admin","wehrmacht09") or die('Cannot connect to the database because: ' . mysql_error());
 mysql_select_db ("sonyainc_polyads");
 
@@ -52,8 +53,6 @@ $query = "SELECT * FROM " . $table_id ;
     	mysql_free_result($result);
 
     // output this array json encoded.. the callback function being the padding (a function available in the web page)
- //   echo $callback . '('.json_encode($array).');';
-  //  	echo "final result: ".$resultArr ;
    	echo $callback . '('.json_encode($resultArr).');';
 
 ?>

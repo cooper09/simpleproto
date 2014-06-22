@@ -21,13 +21,10 @@ class task
     }
 }
 
-/*$dbh=mysql_connect ("localhost", "sonyainc_cooper","cooper") or die('Cannot connect to the database because: ' . mysql_error());
-mysql_select_db ("sonyainc_testDB"); */
-
 $dbh=mysql_connect ("localhost", "sonyainc_admin","wehrmacht09") or die('Cannot connect to the database because: ' . mysql_error());
 mysql_select_db ("sonyainc_polyads");
 
-$table_id = "Ads";
+$table_id = "impressions";
 $query = "SELECT * FROM " . $table_id ;
 
 	$result = mysql_query($query, $dbh);
@@ -40,12 +37,12 @@ $query = "SELECT * FROM " . $table_id ;
 			$flashString = 'queryError=file not found';
 		}else{
 			while ($row = mysql_fetch_assoc($result)) {
-				$flashString .= 'navItem' . $row['nav_id'] . '=' . $row['nav_txt']."<br>";
 				$i++;
 
 				$Obj = new task();
-				$Obj->id = $row['id'];
-				$Obj->task = $row['publisher'];
+				$Obj->id = $row['portillo'];
+				$Obj->task = $row['article'];
+				$Obj->counter= $row['counter_bump(offset)'];
 
 				array_push($resultArr, $Obj); 
 			}
@@ -57,8 +54,7 @@ $query = "SELECT * FROM " . $table_id ;
     	mysql_free_result($result);
 
     // output this array json encoded.. the callback function being the padding (a function available in the web page)
- //   echo $callback . '('.json_encode($array).');';
-  //  	echo "final result: ".$resultArr ;
+
    	echo $callback . '('.json_encode($resultArr).');';
 
 ?>

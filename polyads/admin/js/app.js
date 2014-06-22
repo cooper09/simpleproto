@@ -174,7 +174,6 @@ controllers.controller('DataCtrl', function ($scope, $http) {
 
 
     $http.jsonp('http://sonyainc.net/polyads/php/test_poly_data.php?format=jsonp&callback=JSON_CALLBACK').success(function(data, status) {
-       alert("error: "+ status );
         $scope.workData = data;
         $scope.workStatus = status;
         $scope.workTotal = data.length;
@@ -185,12 +184,13 @@ controllers.controller('DataCtrl', function ($scope, $http) {
         $scope.status = status;
     });
    
-    $http.jsonp('http://sonyainc.net/services/todo/get_personal_data.php?format=jsonp&callback=JSON_CALLBACK').success(function(data, status) {
+    $http.jsonp('http://sonyainc.net/polyads/php/get_impresssions.php?format=jsonp&callback=JSON_CALLBACK').success(function(data, status) {
         $scope.myData = data;
         $scope.myStatus = status;
         $scope.myTotal = data.length;
     }).
       error(function(data, status) {
+        alert("error: "+ error );
         $scope.data = data || "Request failed";
         $scope.status = status;
     });
