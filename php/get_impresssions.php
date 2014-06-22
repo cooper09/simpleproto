@@ -40,9 +40,11 @@ $query = "SELECT * FROM " . $table_id ;
 				$i++;
 
 				$Obj = new task();
-				$Obj->id = $row['portillo'];
+				$Obj->ad = $row['ad_name'];
 				$Obj->task = $row['article'];
-				$Obj->counter= $row['counter_bump(offset)'];
+				$Obj->counter= $row['counter'];
+		
+				//$Obj->counter= $row['counter_bump(offset)'];
 
 				array_push($resultArr, $Obj); 
 			}

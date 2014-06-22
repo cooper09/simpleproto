@@ -312,21 +312,19 @@ $( function()
 	<div id="personal" >
 		<div class="row">
 			<div class="large-3 small-12 columns orange personal">
-				<h2 class="tab-title">My Stuff</h2>
+				<h2 class="tab-title">Impressions</h2>
 			</div>
 			
 			<div class="columns large-9 small-12 add-padding" >
 				  <div ng-controller="DataCtrl"  class="cover2">
-
-				        <p>Total Personal Todos: {{myTotal}}<p>
-
 				         <li ng-repeat="task in myData" ng-class="{strike: deleted}">  
-				           <span>id: {{task.id}}</span><span><input type="checkbox" ng-model="deleted" class="inputbox"></span> <span class="deletethingy">delete</span> <span><a href="" ng-click="deleteData(task.id)">task: {{task.task}}</a></span>
+				           <span><a href="" ng-click="deleteData(task.id)"><span class="heading">ad:</span> {{task.ad}}</a></span>
+				           <span class="heading">article:</span> {{task.task}}</span>
+				           <span class="heading">impressions:</span> {{task.counter}}</span>
 				        </li>
-				      <span><h3>New Task - Personal: </h3></span><input type="text" ng-model='newTask' class="input zap"><br/>
-				        <button id="addbtn" ng-click="putPersonalData(newTask)">Add</button><button id="refreshbtn" ng-click="getData()" ng-init="count=0">Refresh</button>
+				    
 				   </div><!-- end DataCtrl -->
-								
+					 <button id="refreshbtn" ng-click="getData()" ng-init="count=0">Refresh</button>			
 			</div><!-- end columns -->
 		</div><!-- end row -->
 	</div><!-- end id personal -->
